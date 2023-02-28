@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block title%}Converter{%endblock%}
+
+{%block content%}
+    <h1 id="title">Forex Converter</h1>
+    {% for msg in get_flashed_messages()%}
+        <p id="flash">{{ msg }}</p>
+    {% endfor %}
+    <form action="/result" method="POST" id="form"> 
+        <label> Converting from</label><br>
+        <input type="text" name="c1"></input><br>
+        <label> Converting to</label><br>
+        <tr><input type="text" name="c2"></input><br>
+        <label> Amount:</label><br>
+        <input type="text" name="amount"></input><br>
+    <br><button id="button">Convert</button>
+    </form>
+{%endblock%}
